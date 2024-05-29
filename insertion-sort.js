@@ -59,6 +59,23 @@ function insertionSortInPlace(arr) {
   */
 
   // Your code here
-}
+  let divider = 0;
 
+  while (divider < arr.length) {
+    console.log(arr.join(',')); // Log the array before each insertion
+    let value = arr[divider];
+
+    for (let i = divider; i >= 0; i--) {
+      //console.log(arr.join(','));
+      let valueToTheLeft = arr[i - 1];
+      if (i === 0 || valueToTheLeft < value) {
+        arr[i] = value;
+        break;
+      }
+      arr[i] = arr[i - 1];
+    }
+    divider++;
+  }
+  return arr;
+}
 module.exports = [insertionSort, insertionSortInPlace];
